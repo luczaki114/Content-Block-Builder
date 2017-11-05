@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="itemBuilder">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Angular Item Builder</title>
+    <link rel="stylesheet" href="stylesheets/style.css">
+    <link rel="stylesheet" href="vendor/bootstrap/css/bootstrap.min.css">
+</head>
+<body>
+
+    <header id="header" class="bg-primary">
+        <div class="container">
+            <h1>Item Builder</h1>
+        </div>
+    </header>
+
+
+    <!-- The whole app is happening in here -->
+    <main id='main'>
+        <div ng-view></div>
+    </main>
+
+    <footer class="bg-info">
+        <div class="container">
+            <h6>built by Irek Luczak</h6>
+        </div>
+    </footer>
+    
+
+    <!-- Vendor Libraries -->
+    <script src="vendor/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+    <script src="vendor/angular.min.js"></script>
+    <script src="vendor/angular-route.min.js"></script>
+
+    <!-- App -->
+    <script src="javascripts/app/app.js"></script>
+    <script src="javascripts/app/routes.js"></script>
+
+    <!-- Components -->
+    <script src="javascripts/app/components/itemBuilder/itemBuilder.controller.js"></script>
+
+    <!-- Common Components -->
+    <script src="javascripts/app/components/common/cleanHtml.service.js"></script>
+
+</body>
+</html>

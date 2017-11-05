@@ -1,0 +1,297 @@
+<div ng-controller="itemBuilderController as itemBuilder">
+        
+        <div class="container">
+            
+            <div class="row">
+                <div class="col-sm-8">
+                    <h2>Build out a Content Block</h2>
+                    <p>Use this form to create your content block, and it will show up on the right for you to see right away.</p>
+    
+                    <form role="form">
+                        <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+    
+                            <!-- General Fields -->
+                            <div class="panel panel-primary">
+                                <div class="panel-heading"role="tab" id="headingOne">
+                                    <h4 class="panel-title">
+                                        <a role="button" data-toggle="collapse" data-parent="#accordion" data-target="#collapseGeneralFields" aria-expanded="true" aria-controls="collapseGeneralFields">General Fields</a>
+                                    </h4>
+                                </div>
+                                <div id="collapseGeneralFields" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
+                                    <div class="panel-body">
+                                        <!-- Link -->
+                                        <div class="form-group">
+                                            <label for="link">Link</label>
+                                            <input type="text" class="form-control" id="link" ng-model="itemBuilder.link" placeholder="#">
+                                        </div>
+                
+                                        <!-- SR Only -->
+                                        <div class="form-group">
+                                            <label for="sr-only-field">SR Only</label>
+                                            <input type="text" class="form-control" id="sr-only-field" ng-model="itemBuilder.srOnlyField" placeholder="sr only">
+                                        </div>
+                                        
+                                        <!-- CTA -->
+                                        <div class="form-group">
+                                            <label for="cta-text">CTA Text</label>
+                                            <input type="text" class="form-control" id="cta-text" ng-model="itemBuilder.ctaText" placeholder="Call to Action">
+                                        </div>
+            
+                                        <div class="checkbox-inline">
+                                            <label>
+                                                <input type="checkbox" ng-model="itemBuilder.checkMark">
+                                                Add a Check?
+                                                <span class="glyphicon glyphicon-ok" aria-hidden="true"></span>
+                                            </label>
+                                        </div>
+            
+                                    </div>
+                                </div>
+                                
+                            </div>
+                            
+                            <!-- Image Fields -->
+                            <div class="panel panel-primary">
+                                <div class="panel-heading"role="tab" id="headingTwo">
+                                    <h4 class="panel-title">
+                                        <a role="button" data-toggle="collapse" data-parent="#accordion" data-target="#collapseImageFields" aria-expanded="false" aria-controls="collapseImageFields">Image Fields</a>
+                                    </h4>
+                                </div>
+                                <div id="collapseImageFields" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+                                    <div class="panel-body">
+                                        <div class="form-group">
+                                            <label for="image-name">Image Name</label>
+                                            <input type="text" class="form-control" id="image-name" ng-model="itemBuilder.imageName" placeholder="howls castle.jpg">
+                                        </div>
+                
+                                        <div class="form-group">
+                                            <label for="image-alt-text">Image Alt</label>
+                                            <input type="text" class="form-control" id="image-alt-text" ng-model="itemBuilder.imageAltText" placeholder="Howl's Moving Castle">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+        
+                            
+                            <!-- Title Fields -->
+                            <div class="panel panel-primary">
+                                <div class="panel-heading"role="tab" id="headingThree">
+                                    <h4 class="panel-title">
+                                        <a role="button" data-toggle="collapse" data-parent="#accordion" data-target="#collapseTitleFields" aria-expanded="false" aria-controls="collapseTitleFields">Title Fields</a>
+                                    </h4>
+                                </div>
+                                <div id="collapseTitleFields" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
+                                    <div class="panel-body">
+                                        <div class="text-row row" ng-repeat="textRow in itemBuilder.titleTextRows">
+                                            <div class="form-group col-sm-9">
+                                                <label for="title-text">Text</label>
+                                                <textarea class="form-control" id="title-text" ng-model="textRow.text" placeholder="Howl's Moving Castle"></textarea>
+                                            </div>
+                    
+                                            <div class="form-group col-sm-3">
+                                                <label for="title-sup">Superscript</label>
+                                                <input type="text" class="form-control" id="title-sup" ng-model="textRow.sup" placeholder="TM">
+                                            </div>
+                                        </div>
+                                        
+                                        <hr>
+
+                                        <!-- Title Styles -->
+                                        <div class="panel panel-info">
+                                            <div class="panel-heading" id="headingThree-1">
+                                                <h5 class="panel-title">
+                                                    <a role="button" data-toggle="collapse" data-target="#collapseTitleStyles" aria-expanded="false" aria-controls="collapseTitleStyles">Title Styles</a>
+                                                </h5>
+                                            </div>
+                                            <div id="collapseTitleStyles" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree-1">
+                                                <div class="panel-body">
+                                                    <div class="form-group">
+                                                        <label for="title-color-class">Color Class</label>
+                                                        <select class="form-control" id="title-color-class" ng-model="itemBuilder.titleColorClass">
+                                                            <option></option>
+                                                            <option>text-muted</option>
+                                                            <option>text-primary</option>
+                                                            <option>text-success</option>
+                                                            <option>text-info</option>
+                                                            <option>text-warning</option>
+                                                            <option>text-danger</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+            
+                                    </div>
+                                </div>
+                            </div>
+        
+                            <!-- Sub Title Fields -->
+                            <div class="panel panel-primary">
+                                <div class="panel-heading"role="tab" id="headingFour">
+                                    <h4 class="panel-title">
+                                        <a role="button" data-toggle="collapse" data-parent="#accordion" data-target="#collapseSubTitleFields" aria-expanded="false" aria-controls="collapseSubTitleFields">Sub Title Fields</a>
+                                    </h4>
+                                </div>
+                                <div id="collapseSubTitleFields" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFour">
+                                    <div class="panel-body">
+                                        <div class="text-row row" ng-repeat="textRow in itemBuilder.subTitleTextRows">
+                                            <div class="form-group col-sm-9">
+                                                <label for="sub-title-text">Text</label>
+                                                <textarea class="form-control" id="sub-title-text" ng-model="textRow.text" placeholder="Hayao Miyazaki"></textarea>
+                                            </div>
+                    
+                                            <div class="form-group col-sm-3">
+                                                <label for="title-sup">Superscript</label>
+                                                <input type="text" class="form-control" id="title-sup" ng-model="textRow.sup" placeholder="2">
+                                            </div>
+                                        </div>
+                
+                                        <button class="btn btn-primary" ng-click="itemBuilder.addTextRow(itemBuilder.subTitleTextRows)">Add a text row</button>
+                                        <button class="btn btn-danger" ng-if="itemBuilder.subTitleTextRows.length > 1" ng-click="itemBuilder.removeTextRow(itemBuilder.subTitleTextRows)">Remove last text row</button>
+            
+                                        <hr>
+
+                                        <!-- Sub Title Styles -->
+                                        <div class="panel panel-info">
+                                            <div class="panel-heading" id="headingFour-1">
+                                                <h5 class="panel-title">
+                                                    <a role="button" data-toggle="collapse" data-target="#collapseSubTitleStyles" aria-expanded="false" aria-controls="collapseSubTitleStyles">Sub Title Styles</a>
+                                                </h5>
+                                            </div>
+                                            <div id="collapseSubTitleStyles" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFour-1">
+                                                <div class="panel-body">
+                                                    <div class="form-group">
+                                                        <label for="sub-title-color-class">Color Class</label>
+                                                        <select class="form-control" id="sub-title-color-class" ng-model="itemBuilder.subTitleColorClass">
+                                                            <option></option>
+                                                            <option>text-muted</option>
+                                                            <option>text-primary</option>
+                                                            <option>text-success</option>
+                                                            <option>text-info</option>
+                                                            <option>text-warning</option>
+                                                            <option>text-danger</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            
+                            <!-- Description Fields -->
+                            <div class="panel panel-primary">
+                                <div class="panel-heading"role="tab" id="headingFive">
+                                    <h4 class="panel-title">
+                                        <a role="button" data-toggle="collapse" data-parent="#accordion" data-target="#collapseDescriptionFields" aria-expanded="false" aria-controls="collapseDescriptionFields">Description Fields</a>
+                                    </h4>
+                                </div>
+                                <div id="collapseDescriptionFields" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFive">
+                                    <div class="panel-body">
+                                        <div class="text-row row" ng-repeat="textRow in itemBuilder.descriptionTextRows">
+                                            <div class="form-group col-sm-9">
+                                                <label for="title-text">Text</label>
+                                                <textarea class="form-control" id="title-text" ng-model="textRow.text" placeholder="Paragraph"></textarea>
+                                            </div>
+                    
+                                            <div class="form-group col-sm-3">
+                                                <label for="title-sup">Superscript</label>
+                                                <input type="text" class="form-control" id="title-sup" ng-model="textRow.sup" placeholder="">
+                                            </div>
+                                        </div>
+                
+                                        <button class="btn btn-primary" ng-click="itemBuilder.addTextRow(itemBuilder.descriptionTextRows)">Add a text row</button>
+                                        <button class="btn btn-danger" ng-if="itemBuilder.descriptionTextRows.length > 1" ng-click="itemBuilder.removeTextRow(itemBuilder.descriptionTextRows)">Remove last text row</button>
+
+                                        <hr>
+
+                                        <!-- Description Styles -->
+                                        <div class="panel panel-info">
+                                            <div class="panel-heading" id="headingFive-1">
+                                                <h5 class="panel-title">
+                                                    <a role="button" data-toggle="collapse" data-target="#collapseDescriptionTitleStyles" aria-expanded="false" aria-controls="collapseDescriptionTitleStyles">Description Styles</a>
+                                                </h5>
+                                            </div>
+                                            <div id="collapseDescriptionTitleStyles" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingfive-1">
+                                                <div class="panel-body">
+                                                    <div class="form-group">
+                                                        <label for="sub-title-color-class">Color Class</label>
+                                                        <select class="form-control" id="sub-title-color-class" ng-model="itemBuilder.descriptionColorClass">
+                                                            <option></option>
+                                                            <option>text-muted</option>
+                                                            <option>text-primary</option>
+                                                            <option>text-success</option>
+                                                            <option>text-info</option>
+                                                            <option>text-warning</option>
+                                                            <option>text-danger</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+    
+                <div class="col-sm-4">
+                    <div class="panel panel-primary">
+                        <div class="panel-heading">
+                            <h2 class="panel-title">Rendered Result</h2>
+                        </div>
+                        <div id="rendered-content-block" class="panel-body">
+    
+                            <a href="{{itemBuilder.link}}">
+                                <img alt="{{itemBuilder.imageAltText}}" class="img-responsive" src="images/{{itemBuilder.imageName}}">
+                            </a>
+    
+                            <h3 class="title {{itemBuilder.titleColorClass}}">
+                                <span ng-repeat="textRow in itemBuilder.titleTextRows">
+                                    {{textRow.text}}
+                                    <sup ng-if="textRow.sup != ''">{{textRow.sup}}</sup>
+                                    <span ng-if="textRow.clock" class="icon icon-clock"></span>
+                                </span>
+                                <span ng-show="itemBuilder.showRegPrice" ng-repeat="textRow in itemBuilder.regPriceTextRows">
+                                    {{textRow.text}}
+                                    <sup ng-if="textRow.sup != ''">{{textRow.sup}}</sup>
+                                    <span ng-if="textRow.clock" class="icon icon-clock"></span>
+                                </span>
+                            </h3>
+                            <h4 class="sub-title {{itemBuilder.subTitleColorClass}}">
+                                <span ng-repeat="textRow in itemBuilder.subTitleTextRows">
+                                    {{textRow.text}}
+                                    <sup ng-if="textRow.sup != ''">{{textRow.sup}}</sup>
+                                    <span ng-if="textRow.clock" class="icon icon-clock"></span>
+                                </span>
+                            </h4>
+                            <article class="description {{itemBuilder.descriptionColorClass}}">
+                                <p ng-repeat="textRow in itemBuilder.descriptionTextRows">
+                                    {{textRow.text}}
+                                    <sup ng-if="textRow.sup != ''">{{textRow.sup}}</sup>
+                                    <span ng-if="textRow.clock" class="icon icon-clock"></span>
+                                </p>
+                            </article>
+    
+                            <span ng-if="itemBuilder.checkMark" class="glyphicon glyphicon-ok" aria-hidden="true"></span>
+    
+                        </div>
+                    </div>
+    
+                    <hr>
+
+                    <button class="btn btn-primary" ng-click="itemBuilder.cleanHtml()">Clean HTML</button>
+    
+                    <hr>
+
+
+                    <textarea class="form-control" name="cleanedHTML" id="cleanedHTML">{{itemBuilder.cleanedHTML}}</textarea>
+
+                </div>
+    
+            </div>
+        </div>
+    
+    </div>
